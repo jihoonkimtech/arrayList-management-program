@@ -1,4 +1,4 @@
-﻿/*
+/*
 	리스트(list), 선형리스트(linear list)
 		순서를 가진 항목들의 모임
 
@@ -20,18 +20,18 @@
 		리스트 안의 모든 항목을 표시한다.
 
 		객체: n개의 element형으로 구성된 순서있는 모임
-		▪ add_last(list, item) ::= 맨끝에 요소를 추가한다.
-		▪ add_first(list, item) ::= 맨끝에 요소를 추가한다.
-		▪ add(list, pos, item) ::= pos 위치에 요소를 추가한다.
-		▪ delete(list, pos) ::= pos 위치의 요소를 제거한다.
-		▪ clear(list) ::= 리스트의 모든 요소를 제거한다.
-		▪ replace(list, pos, item) ::= pos 위치의 요소를 item로 바꾼다.
-		▪ is_in_list(list, item) ::= item이 리스트안에 있는지를 검사한다.
-		▪ get_entry(list, pos) ::= pos 위치의 요소를 반환한다.
-		▪ get_length(list) ::= 리스트의 길이를 구한다.
-		▪ is_empty(list) ::= 리스트가 비었는지를 검사한다.
-		▪ is_full(list) ::= 리스트가 꽉찼는지를 검사한다.
-		▪ display(list) ::= 리스트의 모든 요소를 표시한다.
+		? add_last(list, item) ::= 맨끝에 요소를 추가한다.
+		? add_first(list, item) ::= 맨끝에 요소를 추가한다.
+		? add(list, pos, item) ::= pos 위치에 요소를 추가한다.
+		? delete(list, pos) ::= pos 위치의 요소를 제거한다.
+		? clear(list) ::= 리스트의 모든 요소를 제거한다.
+		? replace(list, pos, item) ::= pos 위치의 요소를 item로 바꾼다.
+		? is_in_list(list, item) ::= item이 리스트안에 있는지를 검사한다.
+		? get_entry(list, pos) ::= pos 위치의 요소를 반환한다.
+		? get_length(list) ::= 리스트의 길이를 구한다.
+		? is_empty(list) ::= 리스트가 비었는지를 검사한다.
+		? is_full(list) ::= 리스트가 꽉찼는지를 검사한다.
+		? display(list) ::= 리스트의 모든 요소를 표시한다.
 
 
 	리스트 ADT
@@ -99,7 +99,8 @@ int is_full(ArrayListType* _list) {
 
 //리스트 출력
 void display(ArrayListType* _list) {
-	for (int i = 0; i < _list->length; i++) {
+	int i;
+	for (i = 0; i < _list->length; i++) {
 		printf("%d, ", _list->list[i]);
 	}
 	printf("\n");
