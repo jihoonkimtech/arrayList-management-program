@@ -1,3 +1,10 @@
+/*
+	* Program Name : Array Linked-List Management List
+
+	* Author : jihoonkimtech (github)
+	* Version : 0.0.1
+	* Release Date : 2020.02.02
+*/
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -12,7 +19,7 @@ typedef struct {
 
 
 void error(char* msg) {
-	fprintf(stderr, "%s\n", msg);
+	fprintf(stderr, "ERROR : %s\n", msg);
 	exit(1); 
 }
 
@@ -66,19 +73,47 @@ element delete(ArrayListType* _list, int pos) {
 		return item;
 	}
 	else {
-		error("잘못된 인덱스입니다.");
+		error("No more elements to delete!");
 	}
 }
 
+void menu(int* input){
+	while(1){
+		int _input;
+		printf("MENU LIST\n");
+		printf("1. ADD ELEMENT\n");
+		printf("2. DELETE ELEMENT\n");
+		printf("3. PRINT ELEMENT\n\n");
+		printf("COMMAND : ");
+		scanf("%d", _input);
+		
+		if(_input < 0 && _input > 3){
+			error("Invalid command entered\n\n");
+		} else{
+			*input = _input;
+			printf("\n\n");
+			break;
+		}
+		
+	}
+	
+}
+
 int main() {
+	int useCmd;
+	
 	ArrayListType list1;
 	init(&list1); 
+	
+	menu(&useCmd);
+	
 	add(&list1, 0, 10);
 
-	printf("ARRAY LINKED LIST\nMANAGEMENT PROGRAM");
+	printf("\nARRAY LINKED LIST\nMANAGEMENT PROGRAM\n\n");
 
 	display(&list1);
-	printf("%d 요소를 삭제했습니다.\n",delete(&list1, 1));
 	display(&list1);
 
 }
+
+
