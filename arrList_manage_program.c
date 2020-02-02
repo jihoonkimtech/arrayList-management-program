@@ -60,7 +60,7 @@ void add(ArrayListType* _list, int pos, element item) {
 }
 
 
-element delete(ArrayListType* _list, int pos) {
+element del(ArrayListType* _list, int pos) {
 
 	if ((!is_empty(_list)) && ((pos >= 0) && (pos <= _list->length))) {
 		int i;
@@ -83,11 +83,12 @@ void menu(int* input){
 		printf("MENU LIST\n");
 		printf("1. ADD ELEMENT\n");
 		printf("2. DELETE ELEMENT\n");
-		printf("3. PRINT ELEMENT\n\n");
+		printf("3. PRINT ELEMENT\n");
+		printf("4. EXIT\n\n");
 		printf("COMMAND : ");
 		scanf("%d", _input);
 		
-		if(_input < 0 && _input > 3){
+		if(_input < 0 || _input > 3){
 			error("Invalid command entered\n\n");
 		} else{
 			*input = _input;
@@ -100,23 +101,34 @@ void menu(int* input){
 }
 
 int main() {
-	int useCmd;
-	ArrayListType list1;
-	init(&list1); 
+	int useCmd, pos;
+	element elem;
+	ArrayListType list;
+	init(&list); 
 	
 	while(1){
+		menu(&useCmd);
 		
+		if(useCmd == 1){
+			printf("POSITION : ");
+			scanf("%d", pos);
+			printf("\n");
+			printf("ELEMENT : ");
+			scanf("%d", elem);
+			printf("\n");
+			add(&list, pos, elem);
+		} else if(useCmd == 2) {
+			printf("POSITION : ");
+				scanf("%d", pos);
+				printf("\n");
+				del(&list, pos);
+		} else if(useCmd == 3) {
+			display(&list);
+		} else if(useCmd == 4) {
+			exit(1);
+		}
 	}
 	
-	
-	menu(&useCmd);
-	
-	add(&list1, 0, 10);
-
-	printf("\nARRAY LINKED LIST\nMANAGEMENT PROGRAM\n\n");
-
-	display(&list1);
-	display(&list1);
 
 }
 
