@@ -101,9 +101,13 @@ void menu(int* input){
 
 int main() {
 	int useCmd;
-	
 	ArrayListType list1;
 	init(&list1); 
+	
+	while(1){
+		
+	}
+	
 	
 	menu(&useCmd);
 	
