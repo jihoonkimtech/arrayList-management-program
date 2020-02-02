@@ -49,6 +49,9 @@ void display(ArrayListType* _list) {
 
 
 void add(ArrayListType* _list, int pos, element item) { 
+	if(pos > 100 || pos < 0)
+		error("Out of Array size!");
+
 	if ( (!is_full(_list)) && ( (pos >= 0) && (pos <= _list->length) ) ) { 
 		int i;
 		for (i = (_list->length - 1); i >= pos; i--) {
